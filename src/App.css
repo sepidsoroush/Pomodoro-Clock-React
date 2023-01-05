@@ -57,3 +57,10 @@
     margin: 0 10px;
     font-weight: 600;
 }
+.clock{
+    margin: 20px 0;
+    border : 20px solid var(--side-light);
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+}
