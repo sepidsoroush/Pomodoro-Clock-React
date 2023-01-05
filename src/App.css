@@ -28,8 +28,10 @@
 }
 .setting{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     text-align: center;
+    justify-content: space-between;
+    width:400px;
 }
 .label{
     display: block;
