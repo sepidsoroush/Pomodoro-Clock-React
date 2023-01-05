@@ -7,13 +7,13 @@ function App() {
     <div className="App">
       <div className="setting">
         <label htmlFor="session-range" id="session-label">Work duration</label>
-        <button id="session-decrement"><Minus/></button>
+        <button id="session-decrement" className='button'><Minus/></button>
         <input type="range" id='session-range' min={5} max={60}  step={1} />
         <span id='session-length'>25</span>
         <button id="session-increment"><Plus /></button>
 
         <label htmlFor="break-range" id="break-label">Break duration</label>
-        <button id="break-decrement"><Minus/></button>
+        <button id="break-decrement" className='button'><Minus/></button>
         <input type="range" id='break-range' min={1} max={30}  step={1} />
         <span id='break-length'>5</span>
         <button id="break-increment"><Plus/></button>
@@ -25,8 +25,8 @@ function App() {
         </div>
       </div>
       <div className="button-container">
-        <button id='start_stop'><PlayerPlay/></button>
-        <button id='reset'><Refresh/></button>
+        <button id='start_stop' className='button'><PlayerPlay/></button>
+        <button id='reset' className='button'><Refresh/></button>
       </div>
     </div>
   );
