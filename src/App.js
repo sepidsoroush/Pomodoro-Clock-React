@@ -1,22 +1,24 @@
 import './App.css';
-import { PlayerPlay , PlayerPause , Refresh , Plus , Minus } from 'tabler-icons-react';
+import { PlayerPlay , PlayerPause , Refresh , ChevronUp , ChevronDown } from 'tabler-icons-react';
 
 
 function App() {
   return (
     <div className="App">
       <div className="setting">
-        <label htmlFor="session-range" id="session-label">Work duration</label>
-        <button id="session-decrement" className='button'><Minus/></button>
-        <input type="range" id='session-range' min={5} max={60}  step={1} />
-        <span id='session-length'>25</span>
-        <button id="session-increment"><Plus /></button>
-
-        <label htmlFor="break-range" id="break-label">Break duration</label>
-        <button id="break-decrement" className='button'><Minus/></button>
-        <input type="range" id='break-range' min={1} max={30}  step={1} />
-        <span id='break-length'>5</span>
-        <button id="break-increment"><Plus/></button>
+        <div>
+          <span id="session-label" className='label'>Work duration</span>
+          <button id="session-decrement" className='button'><ChevronDown/></button>
+          <span id='session-length'>25</span>
+          <button id="session-increment"><ChevronUp /></button>
+        </div>
+        
+        <div>
+          <span id="break-label" className='label'>Break duration</span>
+          <button id="break-decrement" className='button'><ChevronDown/></button>
+          <span id='break-length'>5</span>
+          <button id="break-increment"><ChevronUp/></button>
+        </div>
       </div>
       <div className="clock">
         <div className='clock-container'>
