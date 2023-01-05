@@ -4,6 +4,7 @@
     --main-light : #fdfcfe;
     --side-light : #2d26db;
     --extra-light : #f06292;
+    --setting-light : #d5d5f9;
     --main-dark : #111111;
     --side-dark : #553ef6;
     --extra-dark : #f381a6;
@@ -17,5 +18,11 @@
 }
 .App{
     background-color: var(--main-light);
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 100vw;
+    height: 100vh;
 }
