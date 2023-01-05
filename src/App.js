@@ -9,16 +9,16 @@ function App() {
       <div className="setting">
         <div>
           <span id="session-label" className='label'>Work duration</span>
-          <button id="session-decrement" className='button'><ChevronDown className='btn'/></button>
+          <button id="session-decrement" className='button-border'><ChevronDown className='btn'/></button>
           <span id='session-length'>25</span>
-          <button id="session-increment" className='button'><ChevronUp /></button>
+          <button id="session-increment" className='button-border'><ChevronUp className='btn'/></button>
         </div>
         
         <div>
           <span id="break-label" className='label'>Break duration</span>
-          <button id="break-decrement" className='button'><ChevronDown/></button>
+          <button id="break-decrement" className='button-border'><ChevronDown className='btn'/></button>
           <span id='break-length'>5</span>
-          <button id="break-increment" className='button'><ChevronUp/></button>
+          <button id="break-increment" className='button-border'><ChevronUp className='btn'/></button>
         </div>
       </div>
       <div className="clock">
@@ -28,8 +28,8 @@ function App() {
         </div>
       </div>
       <div className="button-container">
-        <button id='start_stop' className='button'><PlayerPlay/></button>
-        <button id='reset' className='button'><Refresh/></button>
+        <button id='start_stop' className='button-border'><PlayerPlay className='btn'/></button>
+        <button id='reset' className='button-border'><Refresh className='btn'/></button>
       </div>
     </div>
   );

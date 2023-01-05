@@ -33,11 +33,12 @@
     justify-content: space-between;
     width:400px;
     color : var(--side-light);
+    font-size: 24px;
 }
 .label{
     display: block;
 }
-.button{
+.button-border{
     background-color: var(--main-light);
     width: 60px;
     height: 60px;
