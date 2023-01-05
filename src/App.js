@@ -22,10 +22,8 @@ function App() {
         </div>
       </div>
       <div className="clock">
-        <div className='clock-container'>
           <span id='time-left'>25:00</span>
           <span id='timer-label'>Focus</span>
-        </div>
       </div>
       <div className="button-container">
         <button id='start_stop' className='button-border'><PlayerPlay className='btn'/></button>

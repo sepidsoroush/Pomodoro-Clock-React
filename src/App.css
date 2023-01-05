@@ -63,4 +63,16 @@
     border-radius: 50%;
     height: 300px;
     width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--side-light);
+}
+#time-left{
+    font-size: 60px;
+    font-weight: 600;
+}
+#timer-label{
+    font-size: 28px;
 }
