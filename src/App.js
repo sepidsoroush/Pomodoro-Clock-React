@@ -9,16 +9,16 @@ function App() {
       <div className="setting">
         <div>
           <span id="session-label" className='label'>Work duration</span>
-          <button id="session-decrement" className='button'><ChevronDown/></button>
+          <button id="session-decrement" className='button'><ChevronDown className='btn'/></button>
           <span id='session-length'>25</span>
-          <button id="session-increment"><ChevronUp /></button>
+          <button id="session-increment" className='button'><ChevronUp /></button>
         </div>
         
         <div>
           <span id="break-label" className='label'>Break duration</span>
           <button id="break-decrement" className='button'><ChevronDown/></button>
           <span id='break-length'>5</span>
-          <button id="break-increment"><ChevronUp/></button>
+          <button id="break-increment" className='button'><ChevronUp/></button>
         </div>
       </div>
       <div className="clock">
