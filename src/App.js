@@ -5,6 +5,7 @@ import { PlayerPlay , PlayerPause , Refresh , ChevronUp , ChevronDown } from 'ta
 function App() {
   return (
     <div className="App">
+      <h1>Pomodoro Clock</h1>
       <div className="setting">
         <div>
           <span id="session-label" className='label'>Work duration</span>
