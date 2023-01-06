@@ -4,10 +4,12 @@ import { PlayerPlay , PlayerPause , Refresh , ChevronUp , ChevronDown } from 'ta
 
 
 function App() {
-  
+
+  // declare useState variables
   const [work,setWork] = useState(25);
   const [rest , setRest] = useState(5);
   
+  //define function to decrease and increase session duration
   const changeWork = sign =>{
     if (sign == "-" && (work>0 && work <=60) ){
       setWork(work-1);
@@ -16,6 +18,7 @@ function App() {
     }
   }
 
+  //define function to decrease and increase break duration
   const changeBreak = sign =>{
     if (sign == "-" && (rest>0 && rest <=60) ){
       setRest(rest-1);
