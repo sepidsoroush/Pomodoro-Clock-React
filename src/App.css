@@ -27,7 +27,7 @@
     height: 100vh;
 }
 h1{
-    margin-bottom: 60px;
+    margin-bottom: 50px;
     color:var(--side-light);
     font-size: 52px;
     font-weight: 700;
@@ -38,12 +38,11 @@ h1{
     text-align: center;
     justify-content: space-between;
     width:450px;
-    color : var(--side-light);
 }
 .label{
     display: block;
-    font-size: 28px;
-    font-weight: 500;
+    font-size: 24px;
+    font-weight: 400;
 }
 .button-border{
     background-color: var(--main-light);
@@ -57,6 +56,7 @@ h1{
     height: 48px;
 }
 .length {
+    color: var(--side-light);
     text-align: center;
     vertical-align: 15px;
     font-size: 30px;
@@ -67,13 +67,14 @@ h1{
     margin: 20px 0;
     border : 20px solid var(--side-light);
     border-radius: 50%;
+    min-height: 250px;
+    min-width: 250px;
     height: 300px;
     width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    color: var(--side-light);
+    flex-direction: column;  
 }
 #time-left{
     font-size: 60px;
