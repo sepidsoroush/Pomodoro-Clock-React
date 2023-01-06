@@ -29,6 +29,7 @@ function App() {
         <button id='start_stop' className='button-border'><PlayerPlay className='btn'/></button>
         <button id='reset' className='button-border'><Refresh className='btn'/></button>
       </div>
+      <div className='author'>Designed & Coded by <a href="https://github.com/sepidsoroush">Sepid Soroush</a></div>
     </div>
   );
 }
