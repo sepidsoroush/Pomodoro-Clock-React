@@ -88,3 +88,13 @@ h1{
     width: 120px;
     justify-content: space-between;
 }
+.author , .author a{
+    font-size: 12px;
+    margin-top: 20px;
+    color: var(--main-dark);
+    font-weight: 200;
+    text-decoration: none;
+}
+.author a:hover{
+    color: #f06292;
+}
