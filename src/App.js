@@ -7,7 +7,7 @@ function App() {
 
   const [work,setWork] = useState(25);
   const [rest , setRest] = useState(5);
-  
+
   return (
     <div className="App">
       <h1>Pomodoro Clock</h1>
@@ -15,14 +15,14 @@ function App() {
         <div>
           <span id="session-label" className='label'>Work duration</span>
           <button id="session-decrement" className='button-border'><ChevronDown className='btn'/></button>
-          <span id='session-length' className='length'>25</span>
+          <span id='session-length' className='length'>{work}</span>
           <button id="session-increment" className='button-border'><ChevronUp className='btn'/></button>
         </div>
         
         <div>
           <span id="break-label" className='label'>Break duration</span>
           <button id="break-decrement" className='button-border'><ChevronDown className='btn'/></button>
-          <span id='break-length' className='length'>5</span>
+          <span id='break-length' className='length'>{rest}</span>
           <button id="break-increment" className='button-border'><ChevronUp className='btn'/></button>
         </div>
       </div>
