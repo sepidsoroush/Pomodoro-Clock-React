@@ -8,10 +8,11 @@ function App() {
   // declare useState variables
   const [work,setWork] = useState(25);
   const [rest , setRest] = useState(5);
-  const [minutes , setMinutes] = useState(work);
+  const [minutes , setMinutes] = useState(25);
   const [seconds , setSeconds] = useState(0);
 
-
+  const timerMinutes = minutes < 10 ? `0${minutes}` : minutes ;
+  const timerSeconds = seconds < 10 ? `0${seconds}` : seconds ;
 
   //define function to decrease and increase session duration
   const changeWork = sign =>{
@@ -52,7 +53,7 @@ function App() {
         </div>
       </div>
       <div className="clock">
-          <span id='time-left'>{minutes}:{seconds}</span>
+          <span id='time-left'>{timerMinutes}:{timerSeconds}</span>
           <span id='timer-label'>Focus</span>
       </div>
       <div className="button-container">
