@@ -26,6 +26,12 @@
     width: 100vw;
     height: 100vh;
 }
+h1{
+    margin-bottom: 60px;
+    color:var(--side-light);
+    font-size: 52px;
+    font-weight: 700;
+}
 .setting{
     display: flex;
     flex-direction: row;
