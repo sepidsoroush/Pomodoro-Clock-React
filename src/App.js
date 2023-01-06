@@ -8,14 +8,19 @@ function App() {
   // declare useState variables
   const [work,setWork] = useState(25);
   const [rest , setRest] = useState(5);
-  
+  const [timer , setTimer] = useState("25:00")
   //define function to decrease and increase session duration
   const changeWork = sign =>{
     if (sign == "-" && (work>0 && work <=60) ){
       setWork(work-1);
+      setTimer((work-1).toString()+":"+"00")
+
     }else if(sign == "+" && (work>=0 && work<60)){
       setWork(work+1);
+      setTimer((work+1).toString()+":"+"00")
+
     }
+
   }
 
   //define function to decrease and increase break duration
@@ -26,6 +31,7 @@ function App() {
       setRest(rest+1);
     }
   }
+
 
 
   return (
@@ -47,7 +53,7 @@ function App() {
         </div>
       </div>
       <div className="clock">
-          <span id='time-left'>25:00</span>
+          <span id='time-left'>{timer}</span>
           <span id='timer-label'>Focus</span>
       </div>
       <div className="button-container">
