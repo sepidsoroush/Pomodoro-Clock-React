@@ -10,6 +10,7 @@ function App() {
   const [rest , setRest] = useState(5);
   const [minutes , setMinutes] = useState(25);
   const [seconds , setSeconds] = useState(0);
+  const [label , setLabel] = useState(false);
 
   const timerMinutes = minutes < 10 ? `0${minutes}` : minutes ;
   const timerSeconds = seconds < 10 ? `0${seconds}` : seconds ;
