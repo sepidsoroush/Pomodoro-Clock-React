@@ -1,8 +1,13 @@
+import { useState } from 'react';
 import './App.css';
 import { PlayerPlay , PlayerPause , Refresh , ChevronUp , ChevronDown } from 'tabler-icons-react';
 
 
 function App() {
+
+  const [work,setWork] = useState(25);
+  const [rest , setRest] = useState(5);
+  
   return (
     <div className="App">
       <h1>Pomodoro Clock</h1>
