@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState , useEffect } from 'react';
 import './App.css';
 import { PlayerPlay , PlayerPause , Refresh , ChevronUp , ChevronDown } from 'tabler-icons-react';
 
@@ -13,6 +13,22 @@ function App() {
 
   const timerMinutes = minutes < 10 ? `0${minutes}` : minutes ;
   const timerSeconds = seconds < 10 ? `0${seconds}` : seconds ;
+
+  useEffect(()=>{
+    let interval = setInterval(()=>{
+      clearInterval(interval);
+      if (seconds === 0 ){
+        if (minutes !== 0){
+          setSeconds(59);
+          setMinutes(minutes-1);
+        } else {
+          //
+        }
+      } else {
+        setSeconds(seconds-1);
+      }
+    },1000)
+  } , [seconds]);
 
   //define function to decrease and increase session duration
   const changeWork = sign =>{
