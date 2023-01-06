@@ -7,6 +7,13 @@ function App() {
 
   const [work,setWork] = useState(25);
   const [rest , setRest] = useState(5);
+  const changeWork = sign =>{
+    if (sign == "-" && (work>0 && work <=60) ){
+      setWork(work-1);
+    }else if(sign == "+" && (work>=0 && work<60)){
+      setWork(work+1);
+    }
+  }
 
   return (
     <div className="App">
@@ -14,9 +21,9 @@ function App() {
       <div className="setting">
         <div>
           <span id="session-label" className='label'>Work duration</span>
-          <button id="session-decrement" className='button-border'><ChevronDown className='btn'/></button>
+          <button id="session-decrement" className='button-border' onClick={()=>changeWork("-")}><ChevronDown className='btn'/></button>
           <span id='session-length' className='length'>{work}</span>
-          <button id="session-increment" className='button-border'><ChevronUp className='btn'/></button>
+          <button id="session-increment" className='button-border' onClick={()=>changeWork("+")}><ChevronUp className='btn'/></button>
         </div>
         
         <div>
