@@ -23,7 +23,11 @@ function App() {
           setSeconds(59);
           setMinutes(minutes-1);
         } else {
-          //
+          let minutes = label ? 24 : 4 ;
+          let seconds = 59 ;
+          setSeconds(seconds);
+          setMinutes(minutes);
+          setLabel(!label);
         }
       } else {
         setSeconds(seconds-1);
