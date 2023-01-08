@@ -8,32 +8,13 @@ function App() {
   // declare useState variables
   const [work,setWork] = useState(25);
   const [rest , setRest] = useState(5);
-  const [minutes , setMinutes] = useState(25);
+  const [minutes , setMinutes] = useState(work);
   const [seconds , setSeconds] = useState(0);
-  const [label , setLabel] = useState(false);
-
+  const [isActive,setISActive] =useState(false);
   const timerMinutes = minutes < 10 ? `0${minutes}` : minutes ;
   const timerSeconds = seconds < 10 ? `0${seconds}` : seconds ;
 
-  useEffect(()=>{
-    let interval = setInterval(()=>{
-      clearInterval(interval);
-      if (seconds === 0 ){
-        if (minutes !== 0){
-          setSeconds(59);
-          setMinutes(minutes-1);
-        } else {
-          let minutes = label ? 24 : 4 ;
-          let seconds = 59 ;
-          setSeconds(seconds);
-          setMinutes(minutes);
-          setLabel(!label);
-        }
-      } else {
-        setSeconds(seconds-1);
-      }
-    },1000)
-  } , [seconds]);
+
 
   //define function to decrease and increase session duration
   const changeWork = sign =>{
@@ -53,6 +34,31 @@ function App() {
       setRest(rest+1);
     }
   }
+
+  // useEffect(()=>{
+  //   if (isActive){
+  //     let interval = setInterval(()=>{
+  //       clearInterval(interval);
+  //       if (seconds === 0 ){
+  //         if (minutes !== 0){
+  //           setSeconds(59);
+  //           setMinutes(minutes-1);
+  //         } else {
+  //           let minutes = isActive ? {work} : {rest} ;
+  //           let seconds = 59 ;
+  //           setSeconds(seconds);
+  //           setMinutes(minutes);
+  //           setISActive(!isActive);
+  //         }
+  //       } else {
+  //         setSeconds(seconds-1);
+  //       }
+  //     },1000)
+  //   }
+  // })
+      
+  
+
 
 
   return (
@@ -75,10 +81,10 @@ function App() {
       </div>
       <div className="clock">
           <span id='time-left'>{timerMinutes}:{timerSeconds}</span>
-          <span id='timer-label'>Focus</span>
+          <span id='timer-label'>{ isActive ? "Break" : "Focus"}</span>
       </div>
       <div className="button-container">
-        <button id='start_stop' className='button-border'><PlayerPlay className='btn'/></button>
+        <button id='start_stop' className='button-border' onClick={StartTimer}>< PlayerPlay className='btn'/></button>
         <button id='reset' className='button-border'><Refresh className='btn'/></button>
       </div>
       <div className='author'>Designed & Coded by <a href="https://github.com/sepidsoroush">Sepid Soroush</a></div>
