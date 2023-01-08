@@ -35,29 +35,31 @@ function App() {
     }
   }
 
-  // useEffect(()=>{
-  //   if (isActive){
-  //     let interval = setInterval(()=>{
-  //       clearInterval(interval);
-  //       if (seconds === 0 ){
-  //         if (minutes !== 0){
-  //           setSeconds(59);
-  //           setMinutes(minutes-1);
-  //         } else {
-  //           let minutes = isActive ? {work} : {rest} ;
-  //           let seconds = 59 ;
-  //           setSeconds(seconds);
-  //           setMinutes(minutes);
-  //           setISActive(!isActive);
-  //         }
-  //       } else {
-  //         setSeconds(seconds-1);
-  //       }
-  //     },1000)
-  //   }
-  // })
+  useEffect(()=>{
+    if (isActive){
+      let interval = setInterval(()=>{
+        clearInterval(interval);
+        if (seconds === 0 ){
+          if (minutes !== 0){
+            setSeconds(59);
+            setMinutes(minutes-1);
+          } else {
+            let minutes = isActive ? {work} : {rest} ;
+            let seconds = 59 ;
+            setSeconds(seconds);
+            setMinutes(minutes);
+            setISActive(!isActive);
+          }
+        } else {
+          setSeconds(seconds-1);
+        }
+      },1000)
+    }
+  })
       
-  
+  const handlePlayPause = ()=>{
+    setISActive(!isActive)
+  }
 
 
 
@@ -81,10 +83,10 @@ function App() {
       </div>
       <div className="clock">
           <span id='time-left'>{timerMinutes}:{timerSeconds}</span>
-          <span id='timer-label'>{ isActive ? "Break" : "Focus"}</span>
+          <span id='timer-label'>{ isActive ? "Focus" : "Break"}</span>
       </div>
       <div className="button-container">
-        <button id='start_stop' className='button-border' onClick={StartTimer}>< PlayerPlay className='btn'/></button>
+        <button id='start_stop' className='button-border' onClick={handlePlayPause}>< PlayerPlay className='btn'/></button>
         <button id='reset' className='button-border'><Refresh className='btn'/></button>
       </div>
       <div className='author'>Designed & Coded by <a href="https://github.com/sepidsoroush">Sepid Soroush</a></div>
