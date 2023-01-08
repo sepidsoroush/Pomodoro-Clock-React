@@ -11,6 +11,7 @@ function App() {
   const [minutes , setMinutes] = useState(work);
   const [seconds , setSeconds] = useState(0);
   const [isActive,setISActive] =useState(false);
+  const [label,setLabel] = useState("Focus")
   const timerMinutes = minutes < 10 ? `0${minutes}` : minutes ;
   const timerSeconds = seconds < 10 ? `0${seconds}` : seconds ;
 
@@ -48,7 +49,7 @@ function App() {
             let seconds = 59 ;
             setSeconds(seconds);
             setMinutes(minutes);
-            setISActive(!isActive);
+            setLabel("Break");
           }
         } else {
           setSeconds(seconds-1);
@@ -83,7 +84,7 @@ function App() {
       </div>
       <div className="clock">
           <span id='time-left'>{timerMinutes}:{timerSeconds}</span>
-          <span id='timer-label'>{ isActive ? "Focus" : "Break"}</span>
+          <span id='timer-label'>{label}</span>
       </div>
       <div className="button-container">
         <button id='start_stop' className='button-border' onClick={handlePlayPause}>< PlayerPlay className='btn'/></button>
