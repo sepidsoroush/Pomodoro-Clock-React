@@ -83,6 +83,7 @@ function App() {
       <div className="clock">
           <span id='time-left'>{timerMinutes}:{timerSeconds}</span>
           <span id='timer-label'>{label}</span>
+          <audio id="beep" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"></audio>
       </div>
       <div className="button-container">
         <button id='start_stop' className='button-border' onClick={handlePlayPause}>{isActive? < PlayerPause className='btn'/> : < PlayerPlay className='btn'/> }</button>
