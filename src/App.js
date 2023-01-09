@@ -73,8 +73,6 @@ function App() {
     setMinutes(25);
     setToggle(false);
     audio.pause();
-    audio.currentTime = 0;
-    console.log(seconds);
   }
 
   return (
