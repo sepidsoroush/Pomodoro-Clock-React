@@ -15,6 +15,8 @@ function App() {
   const timerMinutes = minutes < 10 ? `0${minutes}` : minutes ;
   const timerSeconds = seconds < 10 ? `0${seconds}` : seconds ;
   const beep = "https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav";
+  
+
 
   //define function to decrease and increase session duration
   const changeWork = sign =>{
@@ -34,34 +36,34 @@ function App() {
       setRest(rest+1);
     }
   }
-
+ 
   useEffect(()=>{
-    if (isActive){
-      let interval = setInterval(()=>{
-        clearInterval(interval);
-        if (seconds === 0 ){
-          if (minutes !== 0){
-            setSeconds(59);
-            setMinutes(minutes-1);
-          } else {
-            // let audio = new Audio(beep);
-            // audio.play();
-            let mins = toggle ? work : rest ;
-            let secs = 0 ;
-            setSeconds(secs);
-            setMinutes(mins);
-            setToggle(!toggle);
-          }
+    let interval = setInterval(()=>{
+      clearInterval(interval);
+      if (seconds === 0 && isActive){
+        if (minutes !== 0){
+          setSeconds(59);
+          setMinutes(minutes-1);
         } else {
-          setSeconds(seconds-1);
+          // audio.play();
+          let mins = toggle ? work : rest ;
+          let secs = 0 ;
+          setSeconds(secs);
+          setMinutes(mins);
+          setToggle(!toggle);
         }
-      },1000)
-    }
-  })
-      
+      }else if (isActive){
+          setSeconds(seconds-1);
+      }else {
+        return;
+      }
+    },1000);
+  });
+  
+
   const handlePlayPause = ()=>{
     setIsActive(!isActive)
-  }
+  }    
 
   const handleReset =() =>{
     setIsActive(false);
@@ -70,8 +72,10 @@ function App() {
     setSeconds(0);
     setMinutes(25);
     setToggle(false);
+    // audio.pause();
+    // audio.currentTime = 0;
+    console.log(seconds);
   }
-
 
   return (
     <div className="App">
