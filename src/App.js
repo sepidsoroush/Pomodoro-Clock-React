@@ -85,7 +85,7 @@ function App() {
           <span id='timer-label'>{label}</span>
       </div>
       <div className="button-container">
-        <button id='start_stop' className='button-border' onClick={handlePlayPause}>< PlayerPlay className='btn'/></button>
+        <button id='start_stop' className='button-border' onClick={handlePlayPause}>{isActive? < PlayerPause className='btn'/> : < PlayerPlay className='btn'/> }</button>
         <button id='reset' className='button-border'><Refresh className='btn'/></button>
       </div>
       <div className='author'>Designed & Coded by <a href="https://github.com/sepidsoroush">Sepid Soroush</a></div>
