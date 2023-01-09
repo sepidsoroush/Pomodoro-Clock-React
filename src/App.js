@@ -7,14 +7,13 @@ function App() {
 
   // declare useState variables
   const [work,setWork] = useState(25);
-  const [rest , setRest] = useState(5);
+  const [rest , setRest] = useState(0);
   const [seconds , setSeconds] = useState(0);
   const [isActive,setIsActive] =useState(false);
   const [label,setLabel] = useState("Focus")
   const timerMinutes = work < 10 ? `0${work}` : work ;
   const timerSeconds = seconds < 10 ? `0${seconds}` : seconds ;
   const beep = "https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav";
-
 
   //define function to decrease and increase session duration
   const changeWork = sign =>{
@@ -42,12 +41,12 @@ function App() {
             setSeconds(59);
             setWork(work-1);
           } else {
-            let audio = new Audio(beep);
-            audio.play();
-            let minutes = isActive ? {rest} : {work} ;
-            let seconds = 59 ;
-            setSeconds(seconds);
-            setRest(minutes);
+            // let audio = new Audio(beep);
+            // audio.play();
+            let mins = isActive ? rest : work ;
+            let secs = 59 ;
+            setSeconds(secs);
+            setRest(mins);
             setLabel("Break");
           }
         } else {
@@ -61,6 +60,13 @@ function App() {
     setIsActive(!isActive)
   }
 
+  const handleReset =() =>{
+    setIsActive(false)
+    setWork(25);
+    setRest(5);
+    setSeconds(0);
+    setLabel("Focus");
+  }
 
 
   return (
@@ -88,7 +94,7 @@ function App() {
       </div>
       <div className="button-container">
         <button id='start_stop' className='button-border' onClick={handlePlayPause}>{isActive? < PlayerPause className='btn'/> : < PlayerPlay className='btn'/> }</button>
-        <button id='reset' className='button-border'><Refresh className='btn'/></button>
+        <button id='reset' className='button-border' onClick={handleReset}><Refresh className='btn'/></button>
       </div>
       <div className='author'>Designed & Coded by <a href="https://github.com/sepidsoroush">Sepid Soroush</a></div>
     </div>
