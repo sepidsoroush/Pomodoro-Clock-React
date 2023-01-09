@@ -7,12 +7,12 @@ function App() {
 
   // declare useState variables
   const [work,setWork] = useState(25);
-  const [rest , setRest] = useState(1);
+  const [rest , setRest] = useState(5);
   const [minutes , setMinutes] = useState(25);
   const [seconds , setSeconds] = useState(0);
   const [isActive,setIsActive] =useState(false);
   const [label,setLabel] = useState("Focus");
-  // const [toggle , setToggle] = useState(false);
+  const [toggle , setToggle] = useState(false);
   const timerMinutes = minutes < 10 ? `0${minutes}` : minutes ;
   const timerSeconds = seconds < 10 ? `0${seconds}` : seconds ;
   const beep = "https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav";
@@ -47,16 +47,17 @@ function App() {
           } else {
             // let audio = new Audio(beep);
             // audio.play();
-            let mins = isActive ? rest : work ;
-            let secs = 59 ;
+            let mins = toggle ? work : rest ;
+            let secs = 0 ;
             setSeconds(secs);
             setMinutes(mins);
             setLabel("Break");
+            setToggle(!toggle);
           }
         } else {
           setSeconds(seconds-1);
         }
-      },100)
+      },1000)
     }
   })
       
@@ -65,10 +66,11 @@ function App() {
   }
 
   const handleReset =() =>{
-    setIsActive(false)
+    setIsActive(false);
     setWork(25);
     setRest(5);
     setSeconds(0);
+    setMinutes(25);
     setLabel("Focus");
   }
 
@@ -93,7 +95,7 @@ function App() {
       </div>
       <div className="clock">
           <span id='time-left'>{timerMinutes}:{timerSeconds}</span>
-          <span id='timer-label'>{label}</span>
+          <span id='timer-label'>{toggle? "Break" : "Focus"}</span>
           <audio id="beep" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"></audio>
       </div>
       <div className="button-container">
