@@ -10,7 +10,7 @@ function App() {
   const [rest , setRest] = useState(5);
   const [minutes , setMinutes] = useState(work);
   const [seconds , setSeconds] = useState(0);
-  const [isActive,setISActive] =useState(false);
+  const [isActive,setIsActive] =useState(false);
   const [label,setLabel] = useState("Focus")
   const timerMinutes = minutes < 10 ? `0${minutes}` : minutes ;
   const timerSeconds = seconds < 10 ? `0${seconds}` : seconds ;
@@ -24,9 +24,7 @@ function App() {
     }else if(sign == "+" && (work>=0 && work<60)){
       setWork(work+1);
     }
-
   }
-
   //define function to decrease and increase break duration
   const changeBreak = sign =>{
     if (sign == "-" && (rest>0 && rest <=60) ){
@@ -45,7 +43,7 @@ function App() {
             setSeconds(59);
             setMinutes(minutes-1);
           } else {
-            let minutes = isActive ? {work} : {rest} ;
+            let minutes = isActive ? {rest} : {work} ;
             let seconds = 59 ;
             setSeconds(seconds);
             setMinutes(minutes);
@@ -59,7 +57,7 @@ function App() {
   })
       
   const handlePlayPause = ()=>{
-    setISActive(!isActive)
+    setIsActive(!isActive)
   }
 
 
