@@ -8,11 +8,10 @@ function App() {
   // declare useState variables
   const [work,setWork] = useState(25);
   const [rest , setRest] = useState(5);
-  const [minutes , setMinutes] = useState(work);
   const [seconds , setSeconds] = useState(0);
   const [isActive,setIsActive] =useState(false);
   const [label,setLabel] = useState("Focus")
-  const timerMinutes = minutes < 10 ? `0${minutes}` : minutes ;
+  const timerMinutes = work < 10 ? `0${work}` : work ;
   const timerSeconds = seconds < 10 ? `0${seconds}` : seconds ;
   const beep = "https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav";
 
@@ -39,16 +38,16 @@ function App() {
       let interval = setInterval(()=>{
         clearInterval(interval);
         if (seconds === 0 ){
-          if (minutes !== 0){
+          if (work !== 0){
             setSeconds(59);
-            setMinutes(minutes-1);
+            setWork(work-1);
           } else {
-            audio = new Audio(beep);
+            let audio = new Audio(beep);
             audio.play();
             let minutes = isActive ? {rest} : {work} ;
             let seconds = 59 ;
             setSeconds(seconds);
-            setMinutes(minutes);
+            setRest(minutes);
             setLabel("Break");
           }
         } else {
