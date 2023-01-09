@@ -15,7 +15,7 @@ function App() {
   const timerMinutes = minutes < 10 ? `0${minutes}` : minutes ;
   const timerSeconds = seconds < 10 ? `0${seconds}` : seconds ;
   const beep = "https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav";
-  
+  let audio = new Audio(beep);
 
 
   //define function to decrease and increase session duration
@@ -45,7 +45,7 @@ function App() {
           setSeconds(59);
           setMinutes(minutes-1);
         } else {
-          // audio.play();
+          audio.play();
           let mins = toggle ? work : rest ;
           let secs = 0 ;
           setSeconds(secs);
@@ -72,8 +72,8 @@ function App() {
     setSeconds(0);
     setMinutes(25);
     setToggle(false);
-    // audio.pause();
-    // audio.currentTime = 0;
+    audio.pause();
+    audio.currentTime = 0;
     console.log(seconds);
   }
 
