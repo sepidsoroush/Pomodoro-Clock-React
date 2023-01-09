@@ -57,6 +57,7 @@ h1{
 }
 .btn:hover{
     color: var(--extra-light);
+    cursor: pointer;
 }
 .length {
     color: var(--side-light);
