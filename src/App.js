@@ -7,11 +7,13 @@ function App() {
 
   // declare useState variables
   const [work,setWork] = useState(25);
-  const [rest , setRest] = useState(0);
+  const [rest , setRest] = useState(1);
+  const [minutes , setMinutes] = useState(25);
   const [seconds , setSeconds] = useState(0);
   const [isActive,setIsActive] =useState(false);
-  const [label,setLabel] = useState("Focus")
-  const timerMinutes = work < 10 ? `0${work}` : work ;
+  const [label,setLabel] = useState("Focus");
+  // const [toggle , setToggle] = useState(false);
+  const timerMinutes = minutes < 10 ? `0${minutes}` : minutes ;
   const timerSeconds = seconds < 10 ? `0${seconds}` : seconds ;
   const beep = "https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav";
 
@@ -19,8 +21,10 @@ function App() {
   const changeWork = sign =>{
     if (sign == "-" && (work>0 && work <=60) ){
       setWork(work-1);
+      setMinutes(work-1);
     }else if(sign == "+" && (work>=0 && work<60)){
       setWork(work+1);
+      setMinutes(work+1);
     }
   }
   //define function to decrease and increase break duration
@@ -37,22 +41,22 @@ function App() {
       let interval = setInterval(()=>{
         clearInterval(interval);
         if (seconds === 0 ){
-          if (work !== 0){
+          if (minutes !== 0){
             setSeconds(59);
-            setWork(work-1);
+            setMinutes(minutes-1);
           } else {
             // let audio = new Audio(beep);
             // audio.play();
             let mins = isActive ? rest : work ;
             let secs = 59 ;
             setSeconds(secs);
-            setRest(mins);
+            setMinutes(mins);
             setLabel("Break");
           }
         } else {
           setSeconds(seconds-1);
         }
-      },1000)
+      },100)
     }
   })
       
