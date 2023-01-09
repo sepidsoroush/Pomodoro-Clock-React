@@ -11,7 +11,6 @@ function App() {
   const [minutes , setMinutes] = useState(25);
   const [seconds , setSeconds] = useState(0);
   const [isActive,setIsActive] =useState(false);
-  const [label,setLabel] = useState("Focus");
   const [toggle , setToggle] = useState(false);
   const timerMinutes = minutes < 10 ? `0${minutes}` : minutes ;
   const timerSeconds = seconds < 10 ? `0${seconds}` : seconds ;
@@ -51,7 +50,6 @@ function App() {
             let secs = 0 ;
             setSeconds(secs);
             setMinutes(mins);
-            setLabel("Break");
             setToggle(!toggle);
           }
         } else {
@@ -71,7 +69,7 @@ function App() {
     setRest(5);
     setSeconds(0);
     setMinutes(25);
-    setLabel("Focus");
+    setToggle(false);
   }
 
 
