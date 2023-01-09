@@ -14,7 +14,7 @@ function App() {
   const [label,setLabel] = useState("Focus")
   const timerMinutes = minutes < 10 ? `0${minutes}` : minutes ;
   const timerSeconds = seconds < 10 ? `0${seconds}` : seconds ;
-
+  const beep = "https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav";
 
 
   //define function to decrease and increase session duration
@@ -43,6 +43,8 @@ function App() {
             setSeconds(59);
             setMinutes(minutes-1);
           } else {
+            audio = new Audio(beep);
+            audio.play();
             let minutes = isActive ? {rest} : {work} ;
             let seconds = 59 ;
             setSeconds(seconds);
