@@ -53,9 +53,11 @@ function App() {
           setToggle(!toggle);
         }
       }else if (isActive){
-          setSeconds(seconds-1);
+        setSeconds(seconds-1);
       }else {
-        return;
+        setIsActive(false);
+        setMinutes(25);
+        setSeconds(0);
       }
     },1000);
   },[seconds , audio , isActive , minutes , rest , toggle , work]);
@@ -66,11 +68,9 @@ function App() {
   }    
 
   const handleReset =() =>{
-    setIsActive(!isActive);
+    setIsActive(false);
     setWork(25);
     setRest(5);
-    setSeconds(0);
-    setMinutes(25);
     setToggle(false);
     audio.pause();
   }
