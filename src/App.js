@@ -1,4 +1,4 @@
-import { useState , useEffect } from 'react';
+import { useState , useEffect, useMemo } from 'react';
 import './App.css';
 import { PlayerPlay , PlayerPause , Refresh , ChevronUp , ChevronDown } from 'tabler-icons-react';
 import "https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js";
@@ -15,7 +15,7 @@ function App() {
   const timerMinutes = minutes < 10 ? `0${minutes}` : minutes ;
   const timerSeconds = seconds < 10 ? `0${seconds}` : seconds ;
   const beep = "https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav";
-  let audio = new Audio(beep);
+  const audio = useMemo(()=> new Audio(beep) , [beep]) ;
 
 
   //define function to decrease and increase session duration
