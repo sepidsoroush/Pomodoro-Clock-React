@@ -22,6 +22,7 @@
     margin: auto;
     width: 100vw;
     height: 100vh;
+    overflow-y : auto;
 }
 h1{
     margin-bottom: 50px;
@@ -68,10 +69,8 @@ h1{
     margin: 20px 0;
     border : 20px solid var(--side-light);
     border-radius: 50%;
-    min-height: 250px;
-    min-width: 250px;
-    height: 300px;
-    width: 300px;
+    min-height: 300px;
+    min-width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
