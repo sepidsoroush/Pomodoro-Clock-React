@@ -58,7 +58,7 @@ function App() {
         return;
       }
     },1000);
-  });
+  },[seconds]);
   
 
   const handlePlayPause = ()=>{
