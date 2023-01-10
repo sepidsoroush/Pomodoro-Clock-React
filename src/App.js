@@ -58,7 +58,7 @@ function App() {
         return;
       }
     },1000);
-  },[seconds]);
+  },[seconds , audio , isActive , minutes , rest , toggle , work]);
   
 
   const handlePlayPause = ()=>{
@@ -66,7 +66,7 @@ function App() {
   }    
 
   const handleReset =() =>{
-    setIsActive(false);
+    setIsActive(!isActive);
     setWork(25);
     setRest(5);
     setSeconds(0);
