@@ -20,19 +20,19 @@ function App() {
 
   //define function to decrease and increase session duration
   const changeWork = sign =>{
-    if (sign == "-" && (work>0 && work <=60) ){
+    if (sign === "-" && (work>0 && work <=60) ){
       setWork(work-1);
       setMinutes(work-1);
-    }else if(sign == "+" && (work>=0 && work<60)){
+    }else if(sign === "+" && (work>=0 && work<60)){
       setWork(work+1);
       setMinutes(work+1);
     }
   }
   //define function to decrease and increase break duration
   const changeBreak = sign =>{
-    if (sign == "-" && (rest>0 && rest <=60) ){
+    if (sign === "-" && (rest>0 && rest <=60) ){
       setRest(rest-1);
-    }else if(sign == "+" && (rest>=0 && rest<60)){
+    }else if(sign === "+" && (rest>=0 && rest<60)){
       setRest(rest+1);
     }
   }
